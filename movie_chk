@@ -1,0 +1,30 @@
+from bs4 import BeautifulSoup
+from urllib.request import urlopen
+import smtplib
+
+def send_mail(mov):
+    """when the movie is found, it will call this function which will send a mail"""
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login("emailid@gmail.com", "password")
+    msg = " The movie " + mov + " is available in bookmyshow. book it fast before it ends"
+    server.sendmail("from@gmail.com", "to@gmail.com", msg)
+    server.quit()
+
+if __name__ == '__main__':
+    mov = input("Enter the name of the movie:")  # Enter your name of the movie with correct spelling and init format and spaces between each words.
+    mov2 = mov.replace(" ", "-")
+    mov2 = mov2.replace(":", "")
+    base_url = "https://in.bookmyshow.com/coimbatore/movies/nowshowing"
+    try:
+        r = urlopen(base_url).read()
+    except http.client.IncompleteRead as e:  # exception raised as it has something to do with HTTP protocol closing the connection before it has to.
+        r = e.partial
+    soup = BeautifulSoup(r, 'html.parser')
+    # print(soup)
+    tag = soup.find('div', {'data-search-filter': 'movies-' + mov2})
+    # print(tag)
+    if tag is not None:
+        send_mail(mov)
+    else:
+        print('not available')
