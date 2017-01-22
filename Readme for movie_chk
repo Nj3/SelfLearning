@@ -1,0 +1,7 @@
+If python is added in your environment variable, run the below command in cmd
+start /B python <python script-path&file> <name of the movie>
+
+Otherwise,
+start /B <python.exe path> <python script path & file> <name of the movie>
+
+this script will check for the movie every 1hour
