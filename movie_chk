@@ -3,6 +3,7 @@ from urllib.request import urlopen
 import smtplib
 import time
 import sys
+import http.client
 
 def send_mail(mov):
     """when the movie is found, it will call this function which will send a mail"""
@@ -15,7 +16,8 @@ def send_mail(mov):
 
 
 if __name__ == '__main__':
-    mov = input("Enter the name of the movie:")  # Enter your name of the movie with correct spelling and init format and spaces between each words.
+    # mov = input("Enter the name of the movie:")  # Enter your name of the movie with correct spelling and init format and spaces between each words.
+    mov = sys.argv[1] #for entering movie in commandline
     mov2 = mov.replace(" ", "-")
     mov2 = mov2.replace(":", "")
     base_url = "https://in.bookmyshow.com/coimbatore/movies/nowshowing"
@@ -30,7 +32,9 @@ if __name__ == '__main__':
         # print(tag)
         if tag is not None:
             send_mail(mov)
+            # print("found")
             sys.exit(0)
         else:
             time.sleep(3600)
-            continue
+            # print("sleep check completed successfully. Exiting.....")
+            sys.exit(0)
