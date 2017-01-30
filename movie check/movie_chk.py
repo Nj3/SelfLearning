@@ -38,3 +38,5 @@ if __name__ == '__main__':
             time.sleep(3600)
             # print("sleep check completed successfully. Exiting.....")
             # sys.exit(0)
+
+# have to include logic for spicinemas after inspecting the sites html
