@@ -1,6 +1,11 @@
 Completed activities:
 1. check in bookmyshow -> now showing
+2. Include different locations in India. (as an input)
 
 Planned:
 1. Include spicinemas.
-2. Include different locations in India. (as an input)
+2. GUI once its converted to .exe
+
+
+Log:
+1/31: added city as input. will have to change the input format as input()[either in console or some gui] rather than command line arguments. This is for .exe version of it
