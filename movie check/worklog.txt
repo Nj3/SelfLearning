@@ -1,6 +1,6 @@
 Completed activities:
 1. check in bookmyshow -> now showing
+2. Include different locations in India. (as an input)
 
 Planned:
 1. Include spicinemas.
-2. Include different locations in India. (as an input)
