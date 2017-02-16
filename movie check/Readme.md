@@ -1,4 +1,4 @@
-#Overview
+#/cityOverview
 
 This is for checking whether a movie booking is opened online. If it's opened, you will receive a mail notification.
 
@@ -20,7 +20,7 @@ Otherwise,
 
 **Note:**
 This script will check for the movie every 1hour
-in case if the movie name has spaces in between, use double quotes for name of the movie. 
+in case if the movie name/city has spaces in between, use double quotes for name of the movie/city. 
 For example,
 
 `start /B python C:/blabla/movie_chk.py "xXx: Return of Xander Cage" chennai`
