@@ -12,15 +12,15 @@ This is for checking whether a movie booking is opened online. If it's opened, y
 
 If python is added in your environment variable, run the below command in cmd
 
-`start /B python <python script-path&file> <name of the movie>`
+`start /B python <python script-path&file> <name of the movie> <city name>`
 
 Otherwise,
 
-`start /B <python.exe path> <python script path & file> <name of the movie>`
+`start /B <python.exe path> <python script path & file> <name of the movie> <city name>`
 
 **Note:**
 This script will check for the movie every 1hour
-in case if the movie name has spaces in between, use double quotes for name of the movie. 
+in case if the movie name/city has spaces in between, use double quotes for name of the movie/city. 
 For example,
 
-`start /B python C:/blabla/movie_chk.py "xXx: Return of Xander Cage"`
+`start /B python C:/blabla/movie_chk.py "xXx: Return of Xander Cage" chennai`

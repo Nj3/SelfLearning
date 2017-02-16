@@ -17,10 +17,13 @@ def send_mail(mov):
 
 if __name__ == '__main__':
     # mov = input("Enter the name of the movie:")  # Enter your name of the movie with correct spelling and init format and spaces between each words.
-    mov = sys.argv[1] #for entering movie in commandline
+    mov = sys.argv[1] # for entering movie in commandline
+    city = sys.argv[2]
+    city = city.lower()
+    city = city.replace(" ", "-") # mainly for capturing delhi
     mov2 = mov.replace(" ", "-")
     mov2 = mov2.replace(":", "")
-    base_url = "https://in.bookmyshow.com/coimbatore/movies/nowshowing"
+    base_url = "https://in.bookmyshow.com/" + city + "/movies/nowshowing"
     while 1:
         try:
             r = urlopen(base_url).read()

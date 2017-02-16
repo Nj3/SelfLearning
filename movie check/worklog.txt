@@ -4,3 +4,6 @@ Completed activities:
 
 Planned:
 1. Include spicinemas.
+
+Log:
+1/31: added city as input. 
