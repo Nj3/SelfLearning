@@ -4,8 +4,7 @@ Completed activities:
 
 Planned:
 1. Include spicinemas.
-2. GUI once its converted to .exe
 
 
 Log:
-1/31: added city as input. will have to change the input format as input()[either in console or some gui] rather than command line arguments. This is for .exe version of it
+1/31: added city as input. 
