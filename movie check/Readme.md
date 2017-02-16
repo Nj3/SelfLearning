@@ -1,4 +1,4 @@
-#/cityOverview
+#Overview
 
 This is for checking whether a movie booking is opened online. If it's opened, you will receive a mail notification.
 
