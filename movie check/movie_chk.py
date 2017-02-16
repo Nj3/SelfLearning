@@ -20,6 +20,7 @@ if __name__ == '__main__':
     mov = sys.argv[1] # for entering movie in commandline
     city = sys.argv[2]
     city = city.lower()
+    city = city.replace(" ", "-") # mainly for capturing delhi
     mov2 = mov.replace(" ", "-")
     mov2 = mov2.replace(":", "")
     base_url = "https://in.bookmyshow.com/" + city + "/movies/nowshowing"
@@ -40,5 +41,3 @@ if __name__ == '__main__':
             time.sleep(3600)
             # print("sleep check completed successfully. Exiting.....")
             # sys.exit(0)
-
-# have to include logic for spicinemas after inspecting the sites html
