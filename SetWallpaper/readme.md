@@ -7,5 +7,4 @@ Open the terminal where you placed the script, run it by using the below command
 
 `python3 setting_wallpaper.py`
 
-P.S:
-coding for windows is in-progress.
+Update documentation
