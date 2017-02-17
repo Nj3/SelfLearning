@@ -3,6 +3,7 @@ from urllib.request import urlopen, urlretrieve
 import os
 import datetime
 import platform
+import ctypes
 
 
 def set_wp(path):
@@ -11,16 +12,16 @@ def set_wp(path):
     nam = str(datetime.datetime.now().date())+'_bing.jpg'
     # print(nam)
     urlretrieve(path, nam) # it saves the wallpaper in project folder
-    # os.system('cp ~/PycharmProjects/self_learning/'+nam + ' /home/$USER/Pictures') #it copies the image to picture folder ,it seems only from picture folder i can set the bg
     os.system('gsettings set org.gnome.desktop.background picture-uri file://'+'/home/$USER/PycharmProjects/self_learning/'+nam)
 
 def set_bg(path):
     """After downloading the image from the site. save it in picture folder
      and sets the image as background. for windows"""
     nam = os.path.join("C:\\Users\\natar_000\Pictures\Bing_Wallpapers\\",str(datetime.datetime.now().date())+'_bing.jpg')
-    print(nam)
+    # print(nam)
     urlretrieve(path, nam)
-    os.system('reg add \"HKEY_CURRENT_USER\Control Panel\Desktop\" /v Wallpaper /t REG_SZ /d ' + nam +' /f')
+    SPI_SETDESKWALLPAPER = 20
+    ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, nam, 3)
 
 if __name__ == '__main__':
     base_url = "http://bingwallpaper.com"
