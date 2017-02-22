@@ -7,12 +7,17 @@ import ctypes
 
 
 def set_wp(path):
-    """After downloading the image from the site. It sets the image as desktop wallpaper.
+    """After downloading the image from the site, it saves it in Picture
+    folder. It sets the image as desktop wallpaper.
     path tells the url for the image to be downloaded.For ubuntu"""
-    nam = str(datetime.datetime.now().date())+'_bing.jpg'
-    # print(nam)
-    urlretrieve(path, nam) # it saves the wallpaper in project folder
-    os.system('gsettings set org.gnome.desktop.background picture-uri file://'+'/home/$USER/PycharmProjects/self_learning/'+nam)
+    nam =  str(datetime.datetime.now().date()) + '_bing.jpg'
+    p = os.path.join(os.path.expanduser('~'),'Pictures')
+    if not os.path.exists(p):
+        os.mkdir(p)
+    urlretrieve(path, p+'/'+nam) # it saves the wallpaper in pictures folder
+    # print('file saving success')
+    #os.system('mv /home/$USER/PythonProjects/self_learning/'+nam+' '+'/home/$USER/Pictures/')
+    os.system('gsettings set org.gnome.desktop.background picture-uri file://'+'/home/$USER/Pictures/'+nam)
 
 def set_bg(path):
     """After downloading the image from the site. save it in picture folder
