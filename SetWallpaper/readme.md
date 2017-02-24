@@ -1,6 +1,7 @@
 #Overview
 
 This will set the bing background as your desktop wallpaper(FULLHD resolution :- 1980x1080).The picture will be saved in your Pictures folder.
+This will set the bing background as your desktop wallpaper(FULLHD resolution :- 1980x1080). 
 
 ## Installation:
 
@@ -29,3 +30,7 @@ If you want to set it automatically everyday at 7 45am, either run the below com
 `schtasks /Create /SC DAILY /TN "SET_BG" /TR "python '<script_path>'" /ST 07:45`
 
 To check whether it's added, type `schtasks /Query /TN "SET_BG"`
+For windows, to change it daily at 9pm,add the below code in cmd
+
+`schtasks /Create /SC DAILY /TN "SET_BG" /TR "python '<filepath>'" /ST 21:00`
+
