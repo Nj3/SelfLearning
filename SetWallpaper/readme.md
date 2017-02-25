@@ -21,7 +21,7 @@ If you want to set wallpaper automatically everday at 7 45am, add the below line
 
 To check whether it's added, type `crontab -l` in terminal.
 
-For Further info on crontab, pleae refer this [cron examples](http://www.thegeekstuff.com/2009/06/15-practical-crontab-examples)
+For Further info on crontab, please refer this [cron examples](http://www.thegeekstuff.com/2009/06/15-practical-crontab-examples)
 
 ###Windows:
 
