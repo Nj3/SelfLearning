@@ -14,8 +14,9 @@ If you want to set Wallpaper in an ad-hoc basis, open the terminal where you pla
 If you want to set wallpaper automatically everday at 7 45am, add the below line in cron file.
 
 1. To edit cron file, open terminal and enter, `crontab -e`
-2. At the last line, type `45 7 * * * /usr/bin/python3 /home/$USER/PythonProjects/SelfLearning/SetWallpaper/BingWallpaper.py` (last argument is your script path)
-3. Save and exit it.
+2. Type this line at the start, `#! /bin/bash`
+3. At the last line, type `45 7 * * * PID=$(pgrep gnome-session) && export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$PID/environ|cut -d= -f2-);/usr/bin/python3 ~/PythonProjects/SelfLearning/SetWallpaper/BingWallpaper.py` (last argument is your script path)
+4. Save and exit it.
 
 To check whether it's added, type `crontab -l` in terminal.
 
