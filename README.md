@@ -2,9 +2,9 @@
 
 ## Completed:
 1. Set bing background as desktop wallpaper.
+2. Check whether movie booking is opened.
 
 ## In-Progress:
-1. Check whether movie booking is opened.
 
 ## Planned:
 1. song downloader.
