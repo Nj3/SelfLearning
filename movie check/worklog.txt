@@ -2,8 +2,6 @@ Completed activities:
 1. check in bookmyshow -> now showing
 2. Include different locations in India. (as an input)
 
-Planned:
-1. Include spicinemas.
-
 Log:
-1/31: added city as input. 
+1/31: added city as input.
+2/26: added email and password as input. 

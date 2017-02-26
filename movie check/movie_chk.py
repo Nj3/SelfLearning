@@ -5,13 +5,13 @@ import time
 import sys
 import http.client
 
-def send_mail(mov):
+def send_mail(mov,email,pswd):
     """when the movie is found, it will call this function which will send a mail"""
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login("emailid@gmail.com", "password")
+    server.login(email,pswd)
     msg = " The movie " + mov + " is available in bookmyshow. book it fast before it ends"
-    server.sendmail("from@gmail.com", "to@gmail.com", msg)
+    server.sendmail(email,email, msg)
     server.quit()
 
 
@@ -23,6 +23,8 @@ if __name__ == '__main__':
     city = city.replace(" ", "-") # mainly for capturing delhi
     mov2 = mov.replace(" ", "-")
     mov2 = mov2.replace(":", "")
+    email = sys.argv[3]
+    pswd =  sys.argv[4]
     base_url = "https://in.bookmyshow.com/" + city + "/movies/nowshowing"
     while 1:
         try:
@@ -34,7 +36,7 @@ if __name__ == '__main__':
         tag = soup.find('div', {'data-search-filter': 'movies-' + mov2})
         # print(tag)
         if tag is not None:
-            send_mail(mov)
+            send_mail(mov,email,pswd)
             # print("found")
             sys.exit(0)
         else:
