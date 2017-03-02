@@ -5,7 +5,6 @@ import datetime
 import platform
 import ctypes
 
-
 def set_wp(path):
     """After downloading the image from the site, it saves it in Picture
     folder. It sets the image as desktop wallpaper.
@@ -15,15 +14,13 @@ def set_wp(path):
     if not os.path.exists(p):
         os.mkdir(p)
     urlretrieve(path, p+'/'+nam) # it saves the wallpaper in pictures folder
-    # print('file saving success')
-    #os.system('mv /home/$USER/PythonProjects/self_learning/'+nam+' '+'/home/$USER/Pictures/')
-    os.system('gsettings set org.gnome.desktop.background picture-uri file://'+'/home/$USER/Pictures/'+nam)
+    os.system('gsettings set org.gnome.desktop.background picture-uri file://'+'$HOME/Pictures/'+nam)
+
 
 def set_bg(path):
     """After downloading the image from the site. save it in picture folder
      and sets the image as background. for windows"""
     nam = os.path.join("C:\\Users\\natar_000\Pictures\Bing_Wallpapers\\",str(datetime.datetime.now().date())+'_bing.jpg')
-    # print(nam)
     urlretrieve(path, nam)
     SPI_SETDESKWALLPAPER = 20
     ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, nam, 3)
@@ -33,13 +30,9 @@ if __name__ == '__main__':
     r = urlopen(base_url).read()
     soup = BeautifulSoup(r,'html.parser')
     tag = soup.select('a.cursor_zoom > img')# '>' this will traverse through multiple tags
-    # print(type(tag))
     img_url = tag[0].get('src')
-    # print(img_url)
     img_url = img_url[:len(img_url)-12] # since strings are immutable im removing the resolution part alone, 12 is the value counted backwards
-    # print(img_url)
     res = '1920x1080.jpg'
-    # print(img_url+res)
     if platform.system() == 'Windows':
         set_bg(img_url+res)
     else:

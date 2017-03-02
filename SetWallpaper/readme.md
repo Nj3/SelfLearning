@@ -1,7 +1,6 @@
 #Overview
 
 This will set the bing background as your desktop wallpaper(FULLHD resolution :- 1980x1080).The picture will be saved in your Pictures folder.
-This will set the bing background as your desktop wallpaper(FULLHD resolution :- 1980x1080). 
 
 ## Installation:
 
