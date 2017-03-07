@@ -1,9 +1,22 @@
+#---------------------------importing libraries------------------------------#
 from __future__ import unicode_literals
 from bs4 import BeautifulSoup
 from urllib.request import urlopen,urlretrieve,Request
 import os
 from urllib.error import HTTPError,URLError
 import youtube_dl
+
+#----------------------------class declaration------------------------------------#
+Class Songs(object):
+    """This class refers to a mp3 file which will contain all the methods to
+    download, name, singer/movie name,..etc"""
+
+    def __init__(self, name, singer):
+        """Initializes the class with name and singer/movie name in the below
+        format: <singer/movie_name> - <song_name>
+            ex: Linkin Park - Numb
+        """
+
 
 def musicdl(dl_url,song_name):
     """This function takes the URL and downloads the mp3 and save it in songs
@@ -41,9 +54,9 @@ if __name__ == '__main__':
     #dl_url ='https://www.yt-download.org/download/320-58b8d9af77ce1-10480000/mp3/PT2_F-1esPk/The%2BChainsmokers%2B-%2BCloser%2B%2528Lyric%2529%2Bft.%2BHalsey.mp3' 
     song_name = input("Enter the song name: ")
     if lang == "English":
-        site = ['youtube','mp3skull','airmp3','archive.org']
+        site = ['mp3skull','beemp3','youtube']
         music_frm_youtube()
     elif lang == "Tamil":
-        site = ['youtube','freetamilmp3','tamilmp3world']
+        site = ['freetamilmp3','tamilmp3world','youtube'],
     else:
         site = ['youtube','mp3skull']
