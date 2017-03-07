@@ -23,4 +23,4 @@ This script will check for the movie every 1hour
 in case if the movie name/city has spaces in between, use double quotes for name of the movie/city. Also its for windows. For ubuntu just type the same command without `start /B`
 For example,
 
-`start /B python C:/blabla/movie_chk.py "xXx: Return of Xander Cage" chennai bla@gmail.com blabla`
+`python3 ~/blabla/movie_chk.py "xXx: Return of Xander Cage" chennai bla@gmail.com blabla`
