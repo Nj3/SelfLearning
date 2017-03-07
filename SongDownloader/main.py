@@ -1,8 +1,9 @@
+from __future__ import unicode_literals
 from bs4 import BeautifulSoup
 from urllib.request import urlopen,urlretrieve,Request
 import os
 from urllib.error import HTTPError,URLError
-
+import youtube_dl
 
 def musicdl(dl_url,song_name):
     """This function takes the URL and downloads the mp3 and save it in songs
@@ -23,8 +24,26 @@ def musicdl(dl_url,song_name):
             song.write(tmp.read())
     except HTTPError as e:
         print('error code', e.code)
-   
+
+def music_frm_youtube():
+    """passes the youtube url of the song. it extracts audio alone and saves it
+    in local.
+    dl_url : youtube url for song which is priortised based on channel/views.
+    """
+    ydl_opts = {'format':'bestaudio/best','postprocessors':[{'key':'FFmpegExtractAudio','preferredcodec':'mp3','preferredquality':'192',}]}
+    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+        ydl.download(['https://www.youtube.com/watch?v=gJeh_dLjPN4'])
+    print('download success')
+
 if __name__ == '__main__':
-    dl_url ='https://www.yt-download.org/download/320-58b8d9af77ce1-10480000/mp3/PT2_F-1esPk/The%2BChainsmokers%2B-%2BCloser%2B%2528Lyric%2529%2Bft.%2BHalsey.mp3' 
-    song_name = 'The Chainsmokers Closer'
-    musicdl(dl_url, song_name)
+    lang = input("Enter the language: ")
+    singer = input("Enter the author/movie name: ")
+    #dl_url ='https://www.yt-download.org/download/320-58b8d9af77ce1-10480000/mp3/PT2_F-1esPk/The%2BChainsmokers%2B-%2BCloser%2B%2528Lyric%2529%2Bft.%2BHalsey.mp3' 
+    song_name = input("Enter the song name: ")
+    if lang == "English":
+        site = ['youtube','mp3skull','airmp3','archive.org']
+        music_frm_youtube()
+    elif lang == "Tamil":
+        site = ['youtube','freetamilmp3','tamilmp3world']
+    else:
+        site = ['youtube','mp3skull']
