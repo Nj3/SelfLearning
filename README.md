@@ -5,7 +5,8 @@
 2. Check whether movie booking is opened.
 
 ## In-Progress:
+1. song downloader
 
 ## Planned:
-1. song downloader.
+1. smart shopping.
 2. File manager(serials, movies, songs, bills, etc..)[criteria for managing undecided].
