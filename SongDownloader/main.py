@@ -7,7 +7,7 @@ from urllib.error import HTTPError,URLError
 import youtube_dl
 
 #----------------------------class declaration------------------------------------#
-Class Songs(object):
+class Songs(object):
     """This class refers to a mp3 file which will contain all the methods to
     download, name, singer/movie name,..etc"""
 
@@ -16,6 +16,7 @@ Class Songs(object):
         format: <singer/movie_name> - <song_name>
             ex: Linkin Park - Numb
         """
+
 
 
 def musicdl(dl_url,song_name):
