@@ -21,7 +21,7 @@ def set_wp(path):
 def set_bg(path):
     """After downloading the image from the site. save it in picture folder
      and sets the image as background. for windows"""
-    p = os.path.join(os.path.expanduser('%USERPROFILE%'),'Pictures','Bing_Wallpapers')
+    p = os.path.join(os.path.expandvars('%USERPROFILE%'),'Pictures','Bing_Wallpapers')
     file_name = str(datetime.datetime.now().date())+'_bing.jpg'
     if not os.path.exists(p):
         os.mkdir(p)
@@ -29,6 +29,7 @@ def set_bg(path):
     urlretrieve(path, nam)
     SPI_SETDESKWALLPAPER = 20
     ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, nam, 3)
+    clean_old(p)
     
 def clean_old(p):
     """Clean old images so that it doesn't occupy too much space.
