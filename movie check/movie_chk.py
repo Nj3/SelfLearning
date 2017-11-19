@@ -42,6 +42,6 @@ if __name__ == '__main__':
             # print("found")
             sys.exit(0)
         else:
-            time.sleep(60)
-            print("sleep check completed successfully. Exiting.....")
-            sys.exit(0)
+            time.sleep(1800)
+#            print("sleep check completed successfully. Exiting.....")
+#            sys.exit(0)

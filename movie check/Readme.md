@@ -1,38 +1,17 @@
-#Overview
+# Overview
 
 This is for checking whether a movie booking is opened online. If it's opened, you will receive a mail notification.
 
 ## Pre-requisite:
 
-* Python 3.5
-* BeautifulSoup (third party module)(it's available by default in linux)
-* gmail account(less secure apps settings Turned on)
+* Python 3.5+ - Ensure python is added in PATH Environment Variable.
+* BeautifulSoup4 - if not available, install it using `pip install beautifulsoup4`
+* gmail account - less secure apps settings turned on only when this script is executing.
 
 ## Instructions:
 
-If python is added in your environment variable, run the below command in cmd
-
-<<<<<<< Updated upstream
-`start /B python <python script-path&file> <name of the movie> <city name> <email> <password>`
-
-Otherwise,
-
-`start /B <python.exe path> <python script path & file> <name of the movie> <city name> <email> <password>`
-=======
-`start /B python <python script-path&file> <name of the movie> <city name>`
-
-Otherwise,
-
-`start /B <python.exe path> <python script path & file> <name of the movie> <city name>`
->>>>>>> Stashed changes
+1. Navigate to your folder where the python script is placed and run `python movie_chk.py <movie name in double quotes and each word should begin with capital letter> <city> <email> <password>`
+example: `python movie_chk.py "Thor: Ragnarok" Mumbai bla@gmail.com blabla`
 
 **Note:**
-This script will check for the movie every 1hour
-in case if the movie name/city has spaces in between, use double quotes for name of the movie/city. Also its for windows. For ubuntu just type the same command without `start /B`
-For example,
-
-<<<<<<< Updated upstream
-`python3 ~/blabla/movie_chk.py "xXx: Return of Xander Cage" chennai bla@gmail.com blabla`
-=======
-`start /B python C:/blabla/movie_chk.py "xXx: Return of Xander Cage" chennai`
->>>>>>> Stashed changes
+This script will check for the movie booking opening every 30mins from the start of execution.
