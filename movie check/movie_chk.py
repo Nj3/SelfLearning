@@ -7,12 +7,14 @@ import http.client
 
 def send_mail(mov,email,pswd):
     """when the movie is found, it will call this function which will send a mail"""
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.starttls()
-    server.login(email,pswd)
-    msg = " The movie " + mov + " is available in bookmyshow. book it fast before it ends"
-    server.sendmail(email,email, msg)
-    server.quit()
+    try:
+        server = smtplib.SMTP_SSL('smtp.gmail.com')
+        server.login(email,pswd)
+        msg = " The movie " + mov + " is available in bookmyshow. book it fast before it ends"
+        server.sendmail(email,email, msg)
+        server.close()
+    except:
+        print("Error sending an email")
 
 
 if __name__ == '__main__':
@@ -40,6 +42,6 @@ if __name__ == '__main__':
             # print("found")
             sys.exit(0)
         else:
-            time.sleep(3600)
-            # print("sleep check completed successfully. Exiting.....")
-            # sys.exit(0)
+            time.sleep(1800)
+#            print("sleep check completed successfully. Exiting.....")
+#            sys.exit(0)
