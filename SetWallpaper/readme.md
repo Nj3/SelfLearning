@@ -28,6 +28,10 @@ If you want to change the time, just edit the first two numbers accordingly in c
 
 For Further info on crontab, please refer this [cron examples](http://www.thegeekstuff.com/2009/06/15-practical-crontab-examples)
 
+In case if it's not working. check whether it's using correct gsettings by typing `which gsettings`. It should point to /usr/bin/gsettings.
+
+If you still get any other error, redirect it to errorlog and send it to me. At the end of cron line, type `> /tmp/errorlog.txt 2>&1`
+
 ### Windows:
 
 If you want to set Desktop Background in an ad-hoc basis, run the script either in your IDE or in cmd, type `python <script_path>`.
